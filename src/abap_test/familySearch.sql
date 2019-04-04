@@ -68,7 +68,6 @@ HAVING COUNT(d.people_id) = (SELECT MAX(i.count_baby)
                                GROUP BY f.people_id
                              ) as i);
 
-
 -- b) Семьи, в которых 3 и более ребенка
 -- Будем считать семьей маму + папу, отбираем количество детей по маме и папе
 select count(d.people_id) as child_count, m.full_name as mother, f.full_name as father
