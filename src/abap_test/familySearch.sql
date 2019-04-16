@@ -38,8 +38,9 @@ VALUES
 -- Запрос, который вернет тебе всех детей, у которых есть отцы вместе с отцами
 SELECT d.full_name AS baby, f.full_name AS father
 FROM abap_testing.familyBonds AS d
-  INNER JOIN abap_testing.familyBonds AS f ON d.father = f.people_id;
+INNER JOIN abap_testing.familyBonds AS f ON d.father = f.people_id;
 
+-- DELETE FROM abap_testing.familyBonds WHERE people_id > 15;
 
 -- Запрос, который вернет тебе отцов и количество детей по ним
 SELECT COUNT(d.people_id) AS count_baby, f.full_name AS father

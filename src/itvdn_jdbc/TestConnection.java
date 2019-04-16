@@ -9,9 +9,9 @@ public class TestConnection {
     public static void main(String[] args) throws ClassNotFoundException, SQLException {
 
         //задаю параментры подключения: URL, имя пользователя и пароль
-        String url = "jdbc:mysql://localhost:3306/itvdn_jdbc";
+        String url = "jdbc:mysql://localhost:3306/first_lesson";
         String userName = "root";
-        String pass = "xxx";
+        String pass = "pass ";
 //Регистрация драйвера с помощью статического инициализатора
         Class.forName("com.mysql.jdbc.Driver");
         try (Connection con = DriverManager.getConnection(url, userName, pass)) {
