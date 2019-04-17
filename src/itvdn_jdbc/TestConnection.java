@@ -11,9 +11,9 @@ public class TestConnection {
         //задаю параментры подключения: URL, имя пользователя и пароль
         String url = "jdbc:mysql://localhost:3306/first_lesson";
         String userName = "root";
-        String pass = "pass ";
+        String pass = "pass";
 //Регистрация драйвера с помощью статического инициализатора
-        Class.forName("com.mysql.jdbc.Driver");
+//        Class.forName("com.mysql.jdbc.Driver");
         try (Connection con = DriverManager.getConnection(url, userName, pass)) {
             System.out.println("Connection Successful");
 

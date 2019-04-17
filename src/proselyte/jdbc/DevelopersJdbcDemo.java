@@ -20,11 +20,14 @@ public class DevelopersJdbcDemo {
         Statement statement = null;
 
         System.out.println("Registering JDBC driver...");
+//      Driver driver = new com.mysql.jdbc.Driver();
 
-//        Class.forName("com.mysql.jdbc.Driver");
+        Class.forName("com.mysql.jdbc.Driver");
+//        Class.forName(JDBC_DRIVER);
 
         System.out.println("Creating database connection...");
         connection = DriverManager.getConnection(DATABASE_URL, USER, PASSWORD);
+
 
         System.out.println("Executing statement...");
         statement = connection.createStatement();
