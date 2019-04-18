@@ -44,7 +44,7 @@ public class PreparedStatementDemo {
             System.out.println("Executing SQL query...");
 
             preparedStatement = connection.prepareStatement(SQL);
-            preparedStatement.setInt(1, 3000);
+            preparedStatement.setInt(1, 2000);
             preparedStatement.setString(2, "java");
 
             System.out.println("Rows impacted: " + preparedStatement.executeUpdate());

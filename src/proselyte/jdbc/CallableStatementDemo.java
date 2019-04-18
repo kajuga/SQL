@@ -7,8 +7,8 @@ public class CallableStatementDemo {
     static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
     static final String DATABASE_URL = "jdbc:mysql://localhost/PROSELYTE_TUTORIALS";
 
-    static final String USER = "ВАШЕ_ИМЯ_ПОЛЬЗОВАТЕЛЯ";
-    static final String PASSWORD = "ВАШ_ПАРОЛЬ";
+    static final String USER = "root";
+    static final String PASSWORD = "pass";
 
 
     public static void main(String[] args) throws ClassNotFoundException, SQLException {
