@@ -1,4 +1,4 @@
-package itvdn_jdbc;
+package itvdn_jdbc.lesson_002;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -12,7 +12,7 @@ public class Main {
     public static void main(String[] args) throws ClassNotFoundException, SQLException, IOException {
         String url = "jdbc:mysql://localhost:3306/itvdn_jdbc";
         String userName = "root";
-        String pass = "xxx";
+        String pass = "pass";
 
         Class.forName("com.mysql.jdbc.Driver");
 

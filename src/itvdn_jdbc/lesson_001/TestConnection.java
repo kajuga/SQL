@@ -1,4 +1,4 @@
-package itvdn_jdbc;
+package itvdn_jdbc.lesson_001;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -13,7 +13,7 @@ public class TestConnection {
         String userName = "root";
         String pass = "pass";
 //Регистрация драйвера с помощью статического инициализатора
-//        Class.forName("com.mysql.jdbc.Driver");
+        Class.forName("com.mysql.jdbc.Driver");
         try (Connection con = DriverManager.getConnection(url, userName, pass)) {
             System.out.println("Connection Successful");
 
