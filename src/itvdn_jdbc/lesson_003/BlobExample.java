@@ -22,7 +22,7 @@ public class BlobExample {
             PreparedStatement preparedStatement = null;
             try {
 
-                BufferedImage image = ImageIO.read(new File("/home/kajuga/projects/SQL/src/itvdn_jdbc/lesson_003/sudan.jpg"));
+                BufferedImage image = ImageIO.read(new File("/home/kajuga/projects/SQL/src/itvdn_jdbc/lesson_003/kajuga.jpg"));
                 Blob nigga = conn.createBlob();
                 try(OutputStream outputStream = nigga.setBinaryStream(1)) {
                     ImageIO.write(image, "jpg", outputStream);
