@@ -17,7 +17,7 @@ public class BlobExample {
 
         try (Connection conn = DriverManager.getConnection(url, userName, pass);
             Statement statement = conn.createStatement()) {
-            statement.executeUpdate("CREATE TABLE Images (name VARCHAR(15), d DATE, image BLOB)");
+            statement.executeUpdate("CREATE TABLE Images (name VARCHAR(15), date DATE, image BLOB)");
 
             PreparedStatement preparedStatement = null;
             try {
@@ -27,10 +27,10 @@ public class BlobExample {
                 try(OutputStream outputStream = nigga.setBinaryStream(1)) {
                     ImageIO.write(image, "jpg", outputStream);
                 }
-                preparedStatement = conn.prepareStatement("INSERT INTO Images (name, d, image) VALUES (?, {d ?}, ?)");
+                preparedStatement = conn.prepareStatement("INSERT INTO Images (name, date, image) VALUES (?, {d ?}, ?)");
                 preparedStatement.setString(1, "NIGGA");
                 preparedStatement.setDate(2, Date.valueOf("2018-04-07"));
-                preparedStatement.setBlob(3, nigga);
+                preparedStatement.setBlob( 3, nigga);
                 preparedStatement.execute();
 
                 ResultSet resultSet = null;
@@ -39,7 +39,7 @@ public class BlobExample {
                     while (resultSet.next()) {
                         Blob newNigga = resultSet.getBlob("image");
                         BufferedImage image1 = ImageIO.read(newNigga.getBinaryStream());
-                        File outputFile = new File("saved.jpg");
+                        File outputFile = new File("/home/kajuga/projects/SQL/src/itvdn_jdbc/lesson_003/saved.jpg");
                         ImageIO.write(image1, "jpg", outputFile);
                     }
                 } catch (SQLException ex) {
