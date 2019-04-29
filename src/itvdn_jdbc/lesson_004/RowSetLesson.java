@@ -39,7 +39,6 @@ public class RowSetLesson {
 
     }
 
-
     static ResultSet getResSet() throws ClassNotFoundException, SQLException {
         Class.forName("com.mysql.jdbc.Driver");
         try (Connection conn = DriverManager.getConnection(url, userName, pass);
