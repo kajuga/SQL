@@ -14,7 +14,6 @@ public class RowSetLesson {
         ResultSet resultSet = getResSet();
 //        while (resultSet.next())
 //            System.out.println(resultSet.getString("name"));
-
         CachedRowSet rowSet = (CachedRowSet) resultSet;
         rowSet.setCommand("SELECT * FROM Books WHERE price > ?");
         rowSet.setDouble(1, 30);
