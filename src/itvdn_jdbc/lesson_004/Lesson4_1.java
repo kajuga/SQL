@@ -24,7 +24,6 @@ public class Lesson4_1 {
                 if (rs.relative(-3)) {
                     ResultSetMetaData rsmd = rs.getMetaData();
 
-
                     while (rs.next()) {
                         for (int i = 1; i <= rsmd.getColumnCount(); ++i) {
                             String field = rsmd.getColumnName(i);
@@ -34,7 +33,6 @@ public class Lesson4_1 {
                         System.out.println("");
                     }
                 }
-
 
             } catch (SQLException ex) {
                 ex.printStackTrace();
