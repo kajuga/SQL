@@ -43,7 +43,6 @@ public class Main {
                 prepStat.close();
             }
 
-
             CallableStatement callableStatement = null;
             try {
                 callableStatement = conn.prepareCall("{CALL booksCount(?)}");

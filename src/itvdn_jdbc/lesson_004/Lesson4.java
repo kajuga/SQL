@@ -35,12 +35,5 @@ public class Lesson4 {
                 }
             }
         }
-
-
-
-
-
-
         }
-
 }
