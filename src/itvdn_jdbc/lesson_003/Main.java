@@ -49,19 +49,14 @@ public class Main {
                 callableStatement.registerOutParameter(1, Types.INTEGER);
                 callableStatement.execute();
                 System.out.println("Количество записей в таблице: " + callableStatement.getInt(1));
-            }catch (SQLException e) {
+            } catch (SQLException e) {
                 e.printStackTrace();
             } finally {
                 callableStatement.close();
             }
 
 
-
-
-
         }
-
-
 
 
     }

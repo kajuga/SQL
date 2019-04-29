@@ -16,7 +16,7 @@ public class BlobExample {
         Class.forName("com.mysql.jdbc.Driver");
 
         try (Connection conn = DriverManager.getConnection(url, userName, pass);
-            Statement statement = conn.createStatement()) {
+             Statement statement = conn.createStatement()) {
             statement.executeUpdate("CREATE TABLE Images (name VARCHAR(15), date DATE, image BLOB)");
 
             PreparedStatement preparedStatement = null;
@@ -24,13 +24,13 @@ public class BlobExample {
 
                 BufferedImage image = ImageIO.read(new File("/home/kajuga/projects/SQL/src/itvdn_jdbc/lesson_003/kajuga.jpg"));
                 Blob nigga = conn.createBlob();
-                try(OutputStream outputStream = nigga.setBinaryStream(1)) {
+                try (OutputStream outputStream = nigga.setBinaryStream(1)) {
                     ImageIO.write(image, "jpg", outputStream);
                 }
                 preparedStatement = conn.prepareStatement("INSERT INTO Images (name, date, image) VALUES (?, {d ?}, ?)");
                 preparedStatement.setString(1, "NIGGA");
                 preparedStatement.setDate(2, Date.valueOf("2018-04-07"));
-                preparedStatement.setBlob( 3, nigga);
+                preparedStatement.setBlob(3, nigga);
                 preparedStatement.execute();
 
                 ResultSet resultSet = null;
@@ -45,7 +45,7 @@ public class BlobExample {
                 } catch (SQLException ex) {
                     ex.printStackTrace();
                 } finally {
-                    if(resultSet != null) {
+                    if (resultSet != null) {
                         resultSet.close();
                     } else {
                         System.err.println("Ошибка чтения БД!!");

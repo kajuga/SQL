@@ -15,13 +15,13 @@ public class Lesson4_1 {
             ResultSet rs = null;
             try {
                 rs = statement.executeQuery("SELECT * FROM Books");
-                if(rs.absolute(2))
+                if (rs.absolute(2))
                     System.out.println(rs.getString("name"));
                 if (rs.previous())
                     System.out.println(rs.getString("name"));
-                if(rs.last())
+                if (rs.last())
                     System.out.println(rs.getString("name"));
-                if(rs.relative(-3)) {
+                if (rs.relative(-3)) {
                     ResultSetMetaData rsmd = rs.getMetaData();
 
 
@@ -39,17 +39,13 @@ public class Lesson4_1 {
             } catch (SQLException ex) {
                 ex.printStackTrace();
             } finally {
-                if (rs !=null) {
+                if (rs != null) {
                     rs.close();
                 } else {
                     System.err.println("Ошибка чтения БД");
                 }
             }
         }
-
-
-
-
 
 
     }

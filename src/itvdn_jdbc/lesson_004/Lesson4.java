@@ -11,14 +11,14 @@ public class Lesson4 {
         Class.forName("com.mysql.jdbc.Driver");
 
         try (Connection conn = DriverManager.getConnection(url, userName, pass);
-            Statement statement = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE)) {
+             Statement statement = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE)) {
             ResultSet rs = null;
             try {
                 rs = statement.executeQuery("SELECT * FROM Books");
                 while (rs.next()) {
                     int id = rs.getInt(1);
                     double price = rs.getDouble(3);
-                    if(id == 4) {
+                    if (id == 4) {
                         rs.updateString("name", "Spartacus (discount)");
                         rs.updateDouble(3, price - 10);
                         rs.updateRow();
@@ -26,14 +26,14 @@ public class Lesson4 {
                 }
 
             } catch (SQLException ex) {
-                 ex.printStackTrace();
+                ex.printStackTrace();
             } finally {
-                if (rs !=null) {
+                if (rs != null) {
                     rs.close();
                 } else {
                     System.err.println("Ошибка чтения БД");
                 }
             }
         }
-        }
+    }
 }
