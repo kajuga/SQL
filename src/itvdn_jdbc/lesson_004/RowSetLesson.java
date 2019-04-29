@@ -36,7 +36,6 @@ public class RowSetLesson {
             double price = rowSet.getDouble(3);
             System.out.println(name + " " + price);
         }
-
     }
 
     static ResultSet getResSet() throws ClassNotFoundException, SQLException {
