@@ -6,11 +6,13 @@ import javax.sql.rowset.RowSetProvider;
 import java.sql.*;
 
 public class RowSetLesson {
+    //происываем url pass usera для драйвера
     static String url = "jdbc:mysql://localhost:3306/first_lesson";
     static String userName = "root";
     static String pass = "pass";
 
     public static void main(String[] args) throws SQLException, ClassNotFoundException {
+        //тут статик методом получем результирующий набор
         ResultSet resultSet = getResSet();
 //        while (resultSet.next())
 //            System.out.println(resultSet.getString("name"));
@@ -36,9 +38,11 @@ public class RowSetLesson {
             System.out.println(name + " " + price);
         }
     }
-
+//полчение результирующего набора
     static ResultSet getResSet() throws ClassNotFoundException, SQLException {
+        //регистрация драйвера
         Class.forName("com.mysql.jdbc.Driver");
+        //try with resourses connection-statement-resultset выполняем запрос, кешруя строку, чтоб без соединения с бд
         try (Connection conn = DriverManager.getConnection(url, userName, pass);
              Statement statement = conn.createStatement()) {
             ResultSet rs = statement.executeQuery("SELECT * FROM Books");
