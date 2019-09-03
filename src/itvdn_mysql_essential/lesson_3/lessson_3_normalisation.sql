@@ -392,6 +392,9 @@ CREATE TABLE Products
     Weight int NULL
 );
 
+alter table Orders CONVERT TO CHARACTER SET utf8;
+alter table OrderDetails CONVERT TO CHARACTER SET utf8;
+alter table Products CONVERT TO CHARACTER SET utf8;
 
 CREATE TABLE OrderDetails
 (
@@ -460,6 +463,7 @@ SELECT * FROM Products;
 -- к ухудшению практического использования
 
 DROP TABLE OrderDetails;
+USE ShopDB;
 
 CREATE TABLE OrderDetails
 (
