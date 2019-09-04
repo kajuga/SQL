@@ -44,6 +44,11 @@ select *
 from JoinTest2;
 
 
+SELECT * FROM JoinTest1 LEFT JOIN JoinTest2 ON id_jt1=id_jt2
+UNION
+SELECT * FROM JoinTest1 RIGHT JOIN JoinTest2 on id_jt1=id_jt2;
+
+
 
 SELECT * FROM JoinTest2 INNER JOIN JoinTest1 ON id_jt1 = id_jt2;
 
@@ -57,3 +62,4 @@ SELECT * FROM JoinTest2 RIGHT OUTER JOIN JoinTest1 ON id_jt1 = id_jt2;
 SELECT *
 FROM JoinTest1
          CROSS JOIN JoinTest2;
+
